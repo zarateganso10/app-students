@@ -1,0 +1,18 @@
+version: "3"  # optional since v1.27.0
+services:
+  api:
+    container_name: api_nest
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/api
+  database:
+    container_name: postgres
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: api_students
