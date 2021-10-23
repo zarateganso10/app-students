@@ -1,0 +1,10 @@
+{
+  "type": "postgres",
+  "host": "database",
+  "port": 5432,
+  "username": "postgres",
+  "password": "postgres",
+  "database": "api_students",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true
+}
