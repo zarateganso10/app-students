@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead tr td {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr td  {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+}
