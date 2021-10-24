@@ -1,13 +1,13 @@
 version: "3"  # optional since v1.27.0
 services:
-  api:
-    container_name: api_nest
-    build: .
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/home/api
-      - /home/api/node_modules
+  # api:
+  #   container_name: api_nest
+  #   build: .
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - .:/home/api
+  #     - /home/api/node_modules
   database:
     container_name: postgres
     image: postgres:14

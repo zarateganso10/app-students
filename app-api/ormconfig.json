@@ -1,10 +1,14 @@
 {
   "type": "postgres",
-  "host": "database",
+  "host": "localhost",
   "port": 5432,
   "username": "postgres",
   "password": "postgres",
   "database": "api_students",
   "entities": ["dist/**/*.entity{.ts,.js}"],
-  "synchronize": true
+  "migrations": ["dist/db/migrations/*"],
+  "cli": {
+    "entitiesDir": "dist/db/entity",
+    "migrationsDir": "dist/db/migrations"
+  }
 }
