@@ -4,13 +4,14 @@ import { LOAD_STUDENTS } from '../../graphql/Queries';
 
 import './styles.css';
 
-type Inputs = {
-  option: string,
-  filter: string,
+type Filter = {
+  name?: string,
+  cpf?: string,
+  email?: string,
 };
 
 interface TableProps {
-  filter: Inputs | undefined;
+  filter: Filter | undefined;
 }
 
 

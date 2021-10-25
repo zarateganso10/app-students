@@ -1,2 +1,4 @@
 app-api/node-modules
 app-web/node-modules
+app-web/package-lock.json
+app-api/package-lock.json

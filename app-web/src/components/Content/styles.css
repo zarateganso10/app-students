@@ -22,3 +22,133 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.container .content .content-header form {
+  margin-top: -15px;
+}
+
+.container .content .content-header form select {
+  height: 37px;
+  width: 70px;
+  border: 1px solid #EEB34B;
+  border-radius: 5px;
+  background-color: #EEB34B;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  color: #F6F9FD;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.container .content .content-header form select:hover {
+  background-color: #FE8529;
+}
+
+.container .content .content-header form input {
+  margin-left: 4px;
+  height: 35px;
+  padding: 0px 10px;
+  border: 1px solid #EEB34B;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  color: #EEB34B;
+}
+
+.container .content .content-header form button {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 4px;
+  height: 37px;
+  width: 100px;
+  background-color: #EEB34B;
+  color: #F6F9FD;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.container .content .content-header form button:hover {
+  background-color: #FE8529;
+}
+
+@media only screen and (max-width: 1080px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container .content {
+    margin-top: -150px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 8px;
+    background-color: #F6F9FD;
+    padding: 0px;
+  }
+  
+  .container .content h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .container .content .content-header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container .content .content-header form {
+    margin-bottom: 20px;
+
+  }
+  
+  .container .content .content-header form select {
+    height: 37px;
+    width: 70px;
+    border: 1px solid #EEB34B;
+    border-radius: 5px;
+    background-color: #EEB34B;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    color: #F6F9FD;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+  
+  .container .content .content-header form select:hover {
+    background-color: #FE8529;
+  }
+  
+  .container .content .content-header form input {
+    margin-left: 4px;
+    height: 35px;
+    width: 150px;
+    padding: 0px 10px;
+    border: 1px solid #EEB34B;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    color: #EEB34B;
+  }
+  
+  .container .content .content-header form button {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 4px;
+    height: 35px;
+    width: 80px;
+    background-color: #EEB34B;
+    color: #F6F9FD;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+}

@@ -37,5 +37,4 @@ export class createTableStudents1635084068025 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable(this.table)
   }
-
 }

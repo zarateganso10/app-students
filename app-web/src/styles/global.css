@@ -10,7 +10,11 @@ h2, h3 {
   color: #FE8529;
 }
 
-/* #EEB34B
-#FE8529
-
-#1A1A1A */
+@media only screen and (max-width: 1080px) {
+  h2, h3 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FE8529;
+  }
+}

@@ -9,9 +9,15 @@ type Inputs = {
   filter?: string,
 };
 
+type Filter = {
+  name?: string,
+  cpf?: string,
+  email?: string,
+};
+
 const Content = () => {
   const { register, handleSubmit } = useForm();
-  const [ filter, setFilter ] = useState<Inputs>();
+  const [ filter, setFilter ] = useState<Filter>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const filterSerialize: any = {}
