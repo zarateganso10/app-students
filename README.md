@@ -36,6 +36,9 @@ Para conseguir rodar a aplicação tanto a api como o web é necessário ter ins
 $ git clone <https://github.com/zarateganso10/app-students.git>
 
 # Acesse a pasta do projeto no terminal/cmd
+$ cd app-students
+
+# Acesse a pasta da api
 $ cd app-api
 
 # Rode o docker-compose up para subir os containers da api
@@ -47,7 +50,7 @@ $ docker-compose up -d
 Se ainda estiver na pasta da api
 
 ```bash
-# Acesse a pasta do projeto no terminal/cmd
+# Acesse a pasta da web
 $ cd ../app-web
 
 # Rode o docker-compose para subir os containers do web
