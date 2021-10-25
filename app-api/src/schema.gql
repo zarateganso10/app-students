@@ -10,7 +10,7 @@ type Student {
 }
 
 type Query {
-  students: [Student!]!
+  students(email: String, cpf: String, name: String): [Student!]!
 }
 
 type Mutation {

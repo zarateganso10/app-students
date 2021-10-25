@@ -10,8 +10,13 @@ export class StudentResolver {
   ) {}
 
   @Query(() => [Student])
-  async students(): Promise<Student[]> {
-    const students = await this.studentService.findAllStudents();
+  async students(
+    @Args('name', { nullable: true }) name?: string,
+    @Args('cpf', { nullable: true }) cpf?: string,
+    @Args('email', { nullable: true }) email?: string
+  ): Promise<Student[]> {
+    const filter = { name, cpf, email }
+    const students = await this.studentService.findAllStudents(filter);
     return students;
   }
 

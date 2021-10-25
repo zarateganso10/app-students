@@ -1,41 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState, FC } from 'react';
+import { useQuery , gql } from '@apollo/client';
+import { LOAD_STUDENTS } from '../../graphql/Queries';
 
 import './styles.css';
 
-const students = [
-  {
-    id: '1',
-    name: 'Matheus',
-    cpf: '45212543819',
-    email: 'matheus@gmail.com'
-  },
-  {
-    id: '2',
-    name: 'Matheus',
-    cpf: '45212543819',
-    email: 'matheus@gmail.com'
-  },
-  {
-    id: '3',
-    name: 'Matheus',
-    cpf: '45212543819',
-    email: 'matheus@gmail.com'
-  },
-  {
-    id: '4',
-    name: 'Giovana',
-    cpf: '45212543819',
-    email: 'matheus@gmail.com'
-  },
-  {
-    id: '5',
-    name: 'Roberto',
-    cpf: '45212543819',
-    email: 'matheus@gmail.com'
-  },
-]
+type Inputs = {
+  option: string,
+  filter: string,
+};
 
-const Table = () => {
+interface TableProps {
+  filter: Inputs | undefined;
+}
+
+
+const Table: FC<TableProps> = ({ filter }) => {
+  const { error, loading, data } = useQuery(LOAD_STUDENTS, {
+    variables: filter ? filter : {}
+  });
+  const [ students, setStudents ] = useState([])
+
+  useEffect(() => {
+    if(data){
+      setStudents(data.students)
+    }
+  }, [data, filter])
+
   return (
     <table>
       <thead>
@@ -47,7 +37,7 @@ const Table = () => {
       </thead>
       <tbody>
         {
-          students.map(student => {
+          students.map((student: any) => {
             return (
               <tr key={Number(student.id)}>
                 <td>{student.name}</td>

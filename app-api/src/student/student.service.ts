@@ -11,8 +11,10 @@ export class StudentService {
     private studentRepository: Repository<Student>
   ) {}
 
-  async findAllStudents(): Promise<Student[]> {
-    const students = await this.studentRepository.find();
+  async findAllStudents(filter: any): Promise<Student[]> {
+    // Delete undefined keys
+    Object.keys(filter).forEach(key => filter[key] === undefined && delete filter[key])
+    const students = await this.studentRepository.find(filter);
     return students;
   }
 

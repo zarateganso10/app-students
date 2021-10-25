@@ -1,28 +1,46 @@
-import React, { FC } from 'react';
+import React, { useState } from 'react';
+import Table from '../Table';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import './styles.css';
 
-interface ContentProps {
-  children:  React.ReactNode;
-}
+type Inputs = {
+  option?: string,
+  filter?: string,
+};
 
-const Content: FC<ContentProps> = ({children}) => {
+const Content = () => {
+  const { register, handleSubmit } = useForm();
+  const [ filter, setFilter ] = useState<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const filterSerialize: any = {}
+    if(data.option === 'all') {
+      setFilter({});
+    }
+    if(data.option){
+      filterSerialize[data.option] = data.filter;
+    }
+    setFilter(filterSerialize);
+  };
+
   return (
     <div className="container">
       <div className="content">
         <div className="content-header">
           <h2>Lista de alunos</h2>
-          <form>
-            <select>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <select {...register("option")} defaultValue="all">
               <option value="name">Nome</option>
               <option value="cpf">CPF</option>
               <option value="email">E-mail</option>
+              <option value="all">Todos</option>
             </select>
-            <input />
-            <button>Buscar</button>
+            <input {...register("filter")} placeholder="buscar" />
+            <button type="submit">Buscar</button>
           </form>
         </div>
-        { children }
+        <Table filter={filter} />
       </div>
     </div>
     
