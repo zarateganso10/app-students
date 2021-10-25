@@ -6,6 +6,7 @@
   "password": "postgres",
   "database": "api_students",
   "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true,
   "migrations": ["dist/db/migrations/*"],
   "cli": {
     "entitiesDir": "dist/db/entity",

@@ -1,4 +1,5 @@
 import {MigrationInterface, QueryRunner, getRepository} from "typeorm";
+import { Student } from "../models/student.entity";
 
 export class createStudents1735084068025 implements MigrationInterface {
 
@@ -56,12 +57,12 @@ export class createStudents1735084068025 implements MigrationInterface {
   ]
 
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await getRepository('students').save(this.students);
+    await getRepository(Student).save(this.students);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     this.students.forEach(async (student) => {
-      await getRepository('students').delete({ cpf: student.cpf })
+      await getRepository(Student).delete({ cpf: student.cpf })
     })
   }
 }
